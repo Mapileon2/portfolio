@@ -1,0 +1,203 @@
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[]
+
+export interface Database {
+  public: {
+    Tables: {
+      profiles: {
+        Row: {
+          id: string
+          full_name: string | null
+          avatar_url: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          full_name?: string | null
+          avatar_url?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          full_name?: string | null
+          avatar_url?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      pages: {
+        Row: {
+          id: string
+          slug: string
+          title: string
+          description: string | null
+          is_published: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          slug: string
+          title: string
+          description?: string | null
+          is_published?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          slug?: string
+          title?: string
+          description?: string | null
+          is_published?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      sections: {
+        Row: {
+          id: string
+          page_id: string
+          type: string
+          title: string
+          content: Json
+          order_index: number
+          is_published: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          page_id: string
+          type: string
+          title: string
+          content: Json
+          order_index: number
+          is_published?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          page_id?: string
+          type?: string
+          title?: string
+          content?: Json
+          order_index?: number
+          is_published?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      projects: {
+        Row: {
+          id: string
+          title: string
+          slug: string
+          description: string | null
+          image_url: string | null
+          content: Json | null
+          is_featured: boolean
+          is_published: boolean
+          rating: number | null
+          result: string | null
+          role: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          title: string
+          slug: string
+          description?: string | null
+          image_url?: string | null
+          content?: Json | null
+          is_featured?: boolean
+          is_published?: boolean
+          rating?: number | null
+          result?: string | null
+          role?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          title?: string
+          slug?: string
+          description?: string | null
+          image_url?: string | null
+          content?: Json | null
+          is_featured?: boolean
+          is_published?: boolean
+          rating?: number | null
+          result?: string | null
+          role?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      media: {
+        Row: {
+          id: string
+          file_name: string
+          file_type: string
+          file_size: number
+          url: string
+          alt_text: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          file_name: string
+          file_type: string
+          file_size: number
+          url: string
+          alt_text?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          file_name?: string
+          file_type?: string
+          file_size?: number
+          url?: string
+          alt_text?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      user_settings: {
+        Row: {
+          id: string
+          theme: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          theme?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          theme?: string
+          created_at?: string
+          updated_at?: string
+        }
+      }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      [_ in never]: never
+    }
+    Enums: {
+      [_ in never]: never
+    }
+  }
+}
